@@ -1,0 +1,48 @@
+import json
+
+def count_scraped_websites(filename):
+    try:
+        with open(filename, 'r') as f:
+            data = json.load(f)
+
+        total_websites = 0
+        newsresults = 0
+        videoresults = 0
+        imageresults = 0
+
+        for entry in data:
+            # Count the number of websites in "organic_results"
+            if "organic_results" in entry:
+                total_websites += len(entry["organic_results"])
+
+            # Count News Results
+            if "news_results" in entry:
+                total_websites += len(entry["news_results"])
+                newsresults += len(entry["news_results"])
+
+            # Count Video Results
+            if "video_results" in entry:
+                total_websites += len(entry["video_results"])
+                videoresults += len(entry["video_results"])
+
+            # Count Image Results
+            if "images_results" in entry:
+                total_websites += len(entry["images_results"])
+                imageresults += len(entry["images_results"])
+
+        print(f"Total websites scraped: {total_websites}")
+        print(f"Total number of news results: {newsresults}")
+        print(f"Total number of video results: {videoresults}")
+        print(f"Total number of image results: {imageresults}")
+        return total_websites
+
+    except FileNotFoundError:
+        print(f"File {filename} not found.")
+        return 0
+    except json.JSONDecodeError:
+        print(f"Error decoding JSON from file {filename}.")
+        return 0
+
+# Example usage
+filename = "Jeff_Wilson_Professor_Dumpster_google_results.json"
+count_scraped_websites(filename)
