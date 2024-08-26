@@ -1,4 +1,4 @@
-#JW Startup
+# JW Startup
 - This is some work to do with a startup being submitted to W24's YC batch under Jeff Wilson
 
 ### To Do:
