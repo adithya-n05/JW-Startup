@@ -5,7 +5,6 @@ import time
 import json
 
 def scrape_data(urls):
-    # Set up Chrome options to avoid headless mode issues and increase timeout
     chrome_options = Options()
     chrome_options.add_argument('--headless')  # Run headless if necessary
     chrome_options.add_argument('--no-sandbox')
@@ -23,14 +22,12 @@ def scrape_data(urls):
             print(f"Error scraping {url}: {e}")
             data[url] = {'error': str(e)}
 
-    driver.quit()  # Close the browser
-    # Save the scraped data to a JSON file
+    driver.quit()  
     with open('jeff_wilson_data.json', 'w') as json_file:
         json.dump(data, json_file, indent=4)
 
     return data
 
-# List of URLs to scrape
 urls = [
     'https://www.linkedin.com/in/jeffwilsonphd/',
     'https://capbase.com/jeff-wilson-minimalistic-design-affordable-housing/',
@@ -45,5 +42,4 @@ urls = [
     'https://www.capitalletter.com/p/jupe'
 ]
 
-# Execute data scraping
 scraped_data = scrape_data(urls)
