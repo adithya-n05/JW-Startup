@@ -2,7 +2,7 @@
 - This is some work to do with a startup being submitted to W24's YC batch under Jeff Wilson
 
 ### To Do:
-- [ ] Scrape data online using google search results
+- [x] Scrape data online using google search results
 - [ ] Clean up data and select additional prompts for scraping and searching
 - [ ] Develop solution to bypass blockers and surpass limits placed by websites like NY Times
 - [ ] Develop LLM based solution to auto scrape data for use in llama index (Perplexity esque clone for multiple searches)
