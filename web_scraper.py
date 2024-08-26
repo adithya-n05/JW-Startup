@@ -1,45 +1,49 @@
-import pandas as pd
-
-file_name = 'Jeff_Wilson_Sources.xlsx'
-df = pd.read_excel(file_name)
-
-def extract_info(soup, source_type):
-    if source_type == 'blog':
-        return ' '.join([p.get_text() for p in soup.find_all('p')])
-    elif source_type == 'video':
-        return soup.find('title').get_text()
-    # Add more conditions as needed
-extracted_data = []
-
-import requests
-from bs4 import BeautifulSoup
-import pandas as pd
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+import time
 import json
 
-def fetch_data(url):
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, 'html.parser')
-    return soup
+def scrape_data(urls):
+    # Set up Chrome options to avoid headless mode issues and increase timeout
+    chrome_options = Options()
+    chrome_options.add_argument('--headless')  # Run headless if necessary
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-dev-shm-usage')
+    driver = webdriver.Chrome(service=Service(), options=chrome_options)  # Initialize WebDriver with options
+    data = {}  # Dictionary to store scraped data
 
-def extract_info(soup, source_type):
-    if source_type == 'blog':
-        return ' '.join([p.get_text() for p in soup.find_all('p')])
-    elif source_type == 'video':
-        return soup.find('title').get_text()
-    # Add more conditions as needed
+    for url in urls:
+        try:
+            driver.get(url)
+            time.sleep(5)  # Increase wait time for the page to load
+            title = driver.title
+            data[url] = {'title': title}
+        except Exception as e:
+            print(f"Error scraping {url}: {e}")
+            data[url] = {'error': str(e)}
 
-file_name = 'Jeff_Wilson_Sources.xlsx'
-df = pd.read_excel(file_name)
+    driver.quit()  # Close the browser
+    # Save the scraped data to a JSON file
+    with open('jeff_wilson_data.json', 'w') as json_file:
+        json.dump(data, json_file, indent=4)
 
-extracted_data = []
+    return data
 
-for index, row in df.iterrows():
-    url = row['Source']
-    description = row['Description']
-    soup = fetch_data(url)
-    content = extract_info(soup, 'blog')  # Adjust based on source type
-    extracted_data.append({'Description': description, 'Content': content})
-    print(f"Content from {description}: {content}")
+# List of URLs to scrape
+urls = [
+    'https://www.linkedin.com/in/jeffwilsonphd/',
+    'https://capbase.com/jeff-wilson-minimalistic-design-affordable-housing/',
+    'https://theorg.com/org/jupe/org-chart/jeff-wilson-1',
+    'https://joinhampton.com/blog/jupe-scaled-to-12-million-in-3-years-with-an-innovative-glamping-tent-and-business-model',
+    'https://x.com/ProfDumpster',
+    'https://www.youtube.com/watch?v=xN_og8z5yQw',
+    'https://www.instagram.com/profdumpster/?hl=am-et',
+    'https://www.youtube.com/watch?v=bhuUdCseF3k',
+    'https://blog.initialized.com/2022/10/video-interview-with-jeff-wilson-ceo-of-jupe/',
+    'https://miamiadschool.com/event/jeff-wilson-jupe/',
+    'https://www.capitalletter.com/p/jupe'
+]
 
-with open('extracted_data.json', 'w') as json_file:
-    json.dump(extracted_data, json_file, indent=4)
+# Execute data scraping
+scraped_data = scrape_data(urls)
