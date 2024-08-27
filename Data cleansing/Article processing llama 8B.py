@@ -60,7 +60,7 @@ def clean_scraped_articles(input_filename, output_filename):
     print(f"Cleaned articles saved to {output_filename}")
 
 # Example usage
-input_filename = "scrapedtext.json"  # Input file with scraped data
+input_filename = "Web Scraper/scraped data/scrapedtext.json"  # Input file with scraped data
 output_filename = "Data cleansing/Cleansed data/text/cleaned_articles.json"  # Output file to save cleaned articles
 
 clean_scraped_articles(input_filename, output_filename)
