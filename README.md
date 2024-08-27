@@ -1,5 +1,5 @@
 # JW Startup
-- This is some work to do with a startup being submitted to W24's YC batch under Jeff Wilson
+- I am developing the codebase for a preseed startup under Jeff Wilson being submitted to YC W24 batch
 
 ### To Do:
 - [x] Scrape data online using google search results
