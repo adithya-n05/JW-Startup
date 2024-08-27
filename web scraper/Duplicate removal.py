@@ -17,7 +17,7 @@ def remove_duplicate_websites(data):
     return data
 
 # Load the data from the JSON file
-filename = "filtered_websites.json"
+filename = "Jupe_Jeff_Wilson_google_results.json"
 with open(filename, 'r') as f:
     data = json.load(f)
 

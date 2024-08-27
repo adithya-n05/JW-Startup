@@ -112,7 +112,7 @@ def fetch_google_results(query, api_key):
         sys.exit(0)
 
 # Example usage
-query = "Jeff Wilson Professor Dumpster"
+query = "The craziest OkCupid date ever"
 api_key = "bbd3497b28da09256090cb720f896de8e73a7483cf2d7856f9eab61cb52c3e14"
 fetch_google_results(query, api_key)
 

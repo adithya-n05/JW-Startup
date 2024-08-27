@@ -32,7 +32,7 @@ def display_and_select_websites(data):
     return all_websites
 
 # Load the data from the JSON file
-filename = "Jeff_Wilson_Professor_Dumpster_google_results pruning.json"
+filename = "cleaned_websites.json"
 with open(filename, 'r') as f:
     data = json.load(f)
 

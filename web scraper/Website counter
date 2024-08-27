@@ -44,5 +44,5 @@ def count_scraped_websites(filename):
         return 0
 
 # Example usage
-filename = "Jeff_Wilson_Professor_Dumpster_google_results.json"
+filename = "Jupe_Jeff_Wilson_google_results.json"
 count_scraped_websites(filename)
