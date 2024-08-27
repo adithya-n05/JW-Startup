@@ -2,13 +2,19 @@ import json
 from serpapi import GoogleSearch
 import signal
 import sys
+import os
 
-def fetch_google_results(query, api_key):
+def fetch_google_results(query):
+    api_key = os.getenv('SERPAPI_KEY')  # Retrieve the SerpApi key from the environment variables
+    
+    if not api_key:
+        print("Error: SERPAPI_KEY environment variable not set.")
+        sys.exit(1)
+    
     num_results_per_page = 10
     start = 0
     filename = f"{query.replace(' ', '_')}_google_results.json"
     
-    # Initialize or create the file
     with open(filename, 'w') as f:
         json.dump([], f)
     
@@ -86,7 +92,6 @@ def fetch_google_results(query, api_key):
             if "featured_videos" in results:
                 page_data["featured_videos"] = results["featured_videos"]
 
-            # If any data was collected, append it to the file
             if page_data:
                 with open(filename, 'r+') as f:
                     current_data = json.load(f)
@@ -96,13 +101,13 @@ def fetch_google_results(query, api_key):
                 
                 # Log the results for debugging
                 total_results_this_page = sum(len(page_data.get(key, [])) for key in page_data)
+                print(f"Page number: {int(start/10)}")
                 print(f"Results fetched this page: {total_results_this_page}")
                 print(f"Results saved to {filename}")
+                
             
-            # Increment to the next set of results
             start += num_results_per_page
 
-            # If fewer results were returned than requested, assume no more results are available
             if total_results_this_page < 0:
                 print("Fewer results returned than expected, stopping.")
                 break
@@ -112,9 +117,9 @@ def fetch_google_results(query, api_key):
         sys.exit(0)
 
 # Example usage
-query = "The craziest OkCupid date ever"
-api_key = "bbd3497b28da09256090cb720f896de8e73a7483cf2d7856f9eab61cb52c3e14"
-fetch_google_results(query, api_key)
+queries = ["The craziest OkCupid date ever"]
+for query in queries:
+    fetch_google_results(query)
 
 # from serpapi import GoogleSearch
 
