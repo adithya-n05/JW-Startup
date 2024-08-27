@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="10px" viewBox="0 0 17 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>sbg-angle_down</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="UI-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-496.000000, -441.000000)" id="Angle-Down" fill="#FFFFFF">
+            <g transform="translate(474.000000, 416.000000)">
+                <g id="Global/White/Angle-Down" transform="translate(21.000000, 25.000000)">
+                    <g>
+                        <rect id="Rectangle-2-Copy" transform="translate(12.949747, 4.949747) rotate(-45.000000) translate(-12.949747, -4.949747) " x="6.94974747" y="3.94974747" width="12" height="2"></rect>
+                        <rect id="Rectangle-2-Copy-3" transform="translate(5.849741, 4.949747) rotate(45.000000) translate(-5.849741, -4.949747) " x="-0.150258635" y="3.94974747" width="12" height="2"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

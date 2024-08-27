@@ -14,42 +14,24 @@ def remove_duplicate_websites(data):
                 print(f"Duplicate found and removed: {result['title']} - {result['link']}")
         return unique_results
 
-    # Check and prune duplicates in each result type
-    if "organic_results" in data:
-        data["organic_results"] = prune_results(data["organic_results"])
+    switch = {
+        "organic_results": "organic_results",
+        "news_results": "news_results",
+        "video_results": "video_results",
+        "images_results": "images_results",
+        "related_questions": "related_questions",
+        "related_searches": "related_searches",
+        "top_stories": "top_stories",
+        "tweets_results": "tweets_results",
+        "events_results": "events_results",
+        "videos_carousel": "videos_carousel",
+        "podcasts_results": "podcasts_results",
+        "featured_videos": "featured_videos"
+    }
 
-    if "news_results" in data:
-        data["news_results"] = prune_results(data["news_results"])
-
-    if "video_results" in data:
-        data["video_results"] = prune_results(data["video_results"])
-
-    if "images_results" in data:
-        data["images_results"] = prune_results(data["images_results"])
-
-    if "related_questions" in data:
-        data["related_questions"] = prune_results(data["related_questions"])
-
-    if "related_searches" in data:
-        data["related_searches"] = prune_results(data["related_searches"])
-
-    if "top_stories" in data:
-        data["top_stories"] = prune_results(data["top_stories"])
-
-    if "tweets_results" in data:
-        data["tweets_results"] = prune_results(data["tweets_results"])
-
-    if "events_results" in data:
-        data["events_results"] = prune_results(data["events_results"])
-
-    if "videos_carousel" in data:
-        data["videos_carousel"] = prune_results(data["videos_carousel"])
-
-    if "podcasts_results" in data:
-        data["podcasts_results"] = prune_results(data["podcasts_results"])
-
-    if "featured_videos" in data:
-        data["featured_videos"] = prune_results(data["featured_videos"])
+    for key in switch:
+        if key in data:
+            data[key] = prune_results(data[key])
 
     return data
 

@@ -92,5 +92,5 @@ def count_scraped_websites(filename):
         print(f"Error decoding JSON from file {filename}.")
         return 0
 
-filename = "Web Scraper/json processing/duplicates_removed.json"
+filename = "Web Scraper/json processing/filtered_websites.json"
 count_scraped_websites(filename)

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="41px" height="40px" viewBox="0 0 41 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>icons8-checkmark</title>
+    <desc>Created with Sketch.</desc>
+    <g id="App-Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="fbgroup-cover" transform="translate(-71.000000, -167.000000)" fill="#01C3A6" fill-rule="nonzero">
+            <g id="icons8-checkmark" transform="translate(71.000000, 167.000000)">
+                <path d="M39.132812,3.460938 L35.546876,1.023438 C34.554688,0.351562 33.195312,0.609376 32.53125,1.59375 L14.953126,27.515626 L6.875,19.4375 C6.03125,18.59375 4.65625,18.59375 3.8125,19.4375 L0.742188,22.507812 C-0.101562,23.351562 -0.101562,24.726562 0.742188,25.578126 L13.164062,38 C13.859376,38.695312 14.953126,39.226562 15.9375,39.226562 C16.921876,39.226562 17.914062,38.609376 18.554688,37.679688 L39.710938,6.46875 C40.382812,5.484376 40.125,4.132812 39.132812,3.460938 Z" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>

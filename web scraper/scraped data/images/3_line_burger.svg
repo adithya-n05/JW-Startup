@@ -1,0 +1,17 @@
+<svg width="20px" height="16px" viewBox="0 0 20 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>3 Line Burger #ffffff2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="Nav-1" transform="translate(-19.000000, -33.000000)" fill-rule="nonzero" stroke="#FFFFFF" stroke-width="2">
+            <g id="FC-Nav">
+                <g id="3-Line-Burger-v3-#ffffff-Copy" transform="translate(19.000000, 31.000000)">
+                    <path d="M1,17 L19,17" id="Line-Copy-2"></path>
+                    <path d="M1,10 L19,10" id="Line-Copy-3"></path>
+                    <path d="M1,3 L19,3" id="Line-Copy-4"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
